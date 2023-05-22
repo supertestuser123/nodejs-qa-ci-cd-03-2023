@@ -34,10 +34,10 @@ Jenkins, Gitlab, Bitbucket(Pipeline), Github actions, Teamcity, CircleCI, Bamboo
 
 Создать pipeline со следующими требования:
 
-- собирает проект и запускает наши тесты
-- наш пайплайн запускается когда кто-то создает pull-request в ветку main.
-- генерирует reports +
-- генерирует coverage +
+- собирает проект и запускает наши тесты +
+- наш пайплайн запускается когда кто-то создает pull-request в ветку main. +
+- генерирует reports
+- генерирует coverage
 - Публикация на github pages
 - нотификацию в Telegram
 - выполнять программный код
