@@ -33,6 +33,6 @@ describe('GET /hello/:name', () => {
       .get('/hello/100200')
       .set('Accept', 'application/json');
 
-    expect(res.body).toEqual({ msg: 'Hello 1002000 from express version 4' })
+    expect(res.body).toEqual({ msg: 'Hello 100200 from express version 4' })
   });
 });
