@@ -8,11 +8,9 @@ app.get('/hello/:name', (req, res) => {
   const { name } = req.params;
 
   res.json({
-    msg: `Hello ${name} from express`
+    msg: `Hello ${name} from express version 4`
   });
 });
-
-console.log('test')
 
 export default {
   start() {
