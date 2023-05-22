@@ -27,4 +27,12 @@ describe('GET /hello/:name', () => {
 
     expect(res.body).toEqual({ msg: 'Hello bad-user from express version 4' })
   });
+
+  test('Should return welcome string 3', async () => {
+    const res = await supertest(config.url)
+      .get('/hello/100200')
+      .set('Accept', 'application/json');
+
+    expect(res.body).toEqual({ msg: 'Hello 100200 from express version 4' })
+  });
 });
