@@ -45,7 +45,7 @@ jobs:
     - name: Run tests
       run: npm run test
 
-    - name: Run tests
+    - name: Run tests coverage
       run: npm run test:coverage
       continue-on-error: true
 
@@ -63,12 +63,25 @@ jobs:
         if-no-files-found: error
         path: ./coverage
 
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
+    - name: send telegram message on push
+      uses: appleboy/telegram-action@master
       with:
-        folder: jest-html-report
-        clean: true
-        token: ${{ secrets.TOKEN }}
+        to: nlapshin
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          ${{ github.actor }} created commit:
+          Commit message: ${{ github.event.commits[0].message }}
+
+          Repository: ${{ github.repository }}
+
+          See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+    # - name: Deploy
+    #   uses: JamesIves/github-pages-deploy-action@v4
+    #   with:
+    #     folder: jest-html-report
+    #     clean: true
+    #     token: ${{ secrets.TOKEN }}
 
   # deploy:
   #   environment:
