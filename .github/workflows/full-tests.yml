@@ -68,6 +68,7 @@ jobs:
       with:
         to: -809053253
         token: ${{ secrets.TELEGRAM_TOKEN }}
+        photo: ./test.png
         message: |
           ${{ github.actor }} created commit:
           Commit message: ${{ github.event.commits[0].message }}
